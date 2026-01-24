@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bhavana Priya • Portfolio</title>
 
     <!-- Google Font -->
@@ -14,17 +14,28 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
+
         body {
             font-family: "Poppins", sans-serif;
-            background: #f6f7fb;
-            color: #333;
+            background: #0e0e17;
+            color: #e4e4e8;
+        }
+
+        /* SMOOTH FADE-IN ANIMATION */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.2s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* NAVBAR */
         nav {
             width: 100%;
-            padding: 20px 40px;
-            background: #ffffffcc;
+            padding: 18px 40px;
+            background: rgba(20, 20, 35, 0.7);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -32,25 +43,39 @@
             justify-content: space-between;
             align-items: center;
             z-index: 10;
-            border-bottom: 1px solid #eaeaea;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
+
         nav a {
             margin-left: 20px;
             text-decoration: none;
-            color: #1a237e;
+            color: #9fa8ff;
             font-weight: 600;
+            transition: 0.3s;
         }
-        nav a:hover { color: #000; }
+
+        nav a:hover { color: #ffffff; }
 
         /* HEADER */
         header {
             text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(135deg, #1a237e, #3949ab);
+            padding: 130px 20px;
+            background: linear-gradient(135deg, #141432, #1f1f3d);
             color: white;
         }
-        header h1 { font-size: 50px; font-weight: 600; }
-        header p { font-size: 20px; margin-top: 10px; opacity: 0.9; }
+
+        header h1 {
+            font-size: 50px;
+            font-weight: 600;
+            animation: fadeIn 1.3s forwards;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 15px;
+            opacity: 0.8;
+            animation: fadeIn 1.8s forwards;
+        }
 
         /* SECTIONS */
         section {
@@ -58,46 +83,59 @@
             margin: 70px auto;
             padding: 0 25px;
         }
+
         section h2 {
             font-size: 28px;
-            color: #1a237e;
+            color: #9fa8ff;
             margin-bottom: 20px;
-            border-left: 5px solid #1a237e;
+            border-left: 5px solid #9fa8ff;
             padding-left: 12px;
         }
 
-        /* PROJECT CARDS */
+        /* CARDS */
         .card {
-            background: white;
+            background: #1b1b2f;
             padding: 25px;
             border-radius: 12px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 0 18px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.4s ease;
         }
+
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            transform: translateY(-7px);
+            box-shadow: 0 0 25px rgba(159,168,255,0.3);
         }
-        .card h3 { margin-bottom: 8px; color: #1a237e; }
+
+        .card h3 {
+            margin-bottom: 8px;
+            color: #bcc4ff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            background: #10101c;
+            color: #8f98ff;
+            font-weight: 600;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
 
         /* CONTACT */
         .contact a {
             display: inline-block;
             margin-right: 15px;
             text-decoration: none;
-            color: #1a237e;
+            color: #9fa8ff;
             font-weight: 600;
+            transition: 0.3s;
         }
 
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-            background: #e8eaf6;
-            color: #1a237e;
-            font-weight: 600;
+        .contact a:hover {
+            color: white;
+            text-shadow: 0 0 10px #9fa8ff;
         }
     </style>
 </head>
@@ -105,8 +143,8 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav>
-        <div style="font-weight: 700; color:#1a237e; font-size:18px;">Bhavana Priya</div>
+    <nav class="fade-in">
+        <div style="font-weight: 700; color:#bcc4ff; font-size:18px;">Bhavana Priya</div>
         <div>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
@@ -118,72 +156,71 @@
 
     <!-- HEADER -->
     <header>
-        <h1>Bhavana Priya P K</h1>
-        <p>Instrumentation & Control Engineering • Embedded Systems • Space-Tech Enthusiast</p>
+        <h1 class="fade-in">Bhavana Priya P K</h1>
+        <p class="fade-in">Instrumentation & Control Engineer • Embedded Systems • Space-Tech Enthusiast</p>
     </header>
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="fade-in">
         <h2>About Me</h2>
         <p>
             I’m a final-year Instrumentation & Control Engineering student passionate about embedded systems, 
-            intelligent sensing, automation, and space/marine technologies. I work at the intersection of physics, 
-            instrumentation, and computation to build reliable, data-driven engineering systems.
+            autonomous sensing, and advanced control engineering. My interests span across aerospace systems, 
+            ocean technologies, and intelligent instrumentation.  
             <br><br>
             Currently a Project Intern at <b>Zeta Space Intelligence</b>, contributing to the Zero Emission mission 
-            through industrial IoT monitoring systems and environmental sensing.
+            through industrial IoT monitoring and environmental sensing.
         </p>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects">
+    <section id="projects" class="fade-in">
         <h2>Projects</h2>
 
         <div class="card">
             <h3>Smart Pod for Infant Cabin Comfort (Aviation)</h3>
-            <p>Intelligent cabin comfort regulation system integrating temperature, humidity, pressure, and noise sensors 
-               with adaptive control logic for safe and stable flight environment.</p>
+            <p>Designed an intelligent cabin comfort system integrating temperature, humidity, pressure, and noise sensors 
+               with adaptive control logic for stable infant comfort during flight.</p>
         </div>
 
         <div class="card">
             <h3>Automated Greenhouse Climate & Weed Control System</h3>
-            <p>IoT greenhouse for mung bean cultivation with dual-layer shading, Peltier temperature control, soil moisture 
-               irrigation, and micro-environment weed suppression. <b>₹25,000 YIP Winner.</b></p>
+            <p>Built an IoT greenhouse for mung bean cultivation with dual-layer shading, Peltier temperature control, 
+               and moisture-based irrigation. <b>Winner of ₹25,000 at YIP 7.0.</b></p>
         </div>
 
         <div class="card">
             <h3>RailMate+ Passenger Assistance System</h3>
-            <p>Web assistant system with PNR tracking, seat mapping, coach navigation, and Firebase-based dynamic UI features.</p>
+            <p>Web-based assistant offering PNR tracking, coach navigation, seat layout visualization, and voice assistance.</p>
         </div>
 
         <div class="card">
             <h3>Soil Moisture Monitoring System</h3>
-            <p>Simple irrigation automation device using IC 741 analog comparator and soil moisture sensing.</p>
+            <p>Irrigation automation prototype using IC 741 comparator and soil moisture sensor.</p>
         </div>
 
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience">
+    <section id="experience" class="fade-in">
         <h2>Experience</h2>
 
         <div class="card">
-            <h3>Zetaspace Intelligence Private Limited (Hybrid)</h3>
+            <h3>Zetaspace Intelligence (Hybrid)</h3>
             <p><i>Jan 2026 – June 2026</i></p>
-            <p>Developing IoT-based climate resilience systems: sensor integration, real-time data pipelines, 
-               and long-term reliability engineering.</p>
+            <p>Developing IoT-based climate resilience systems including environmental sensor integration, 
+               real-time data pipelines, and reliability engineering.</p>
         </div>
 
         <div class="card">
             <h3>Hypstuma (Remote)</h3>
             <p><i>May 2025 – June 2025</i></p>
-            <p>UAV subsystem research, drone modelling, embedded electronics, and NACA 5-series airfoil analysis.</p>
+            <p>Worked on UAV subsystems, drone CAD modelling, embedded electronics, and NACA 5-series airfoil analysis.</p>
         </div>
-
     </section>
 
     <!-- SKILLS -->
-    <section id="skills">
+    <section id="skills" class="fade-in">
         <h2>Skills</h2>
         <p><b>Programming:</b> C, Python, MySQL</p>
         <p><b>Embedded & IoT:</b> Arduino, sensor interfacing, environmental sensing</p>
@@ -195,7 +232,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="fade-in">
         <h2>Contact</h2>
         <p class="contact">
             <a href="mailto:bhavanapriyapk@gmail.com">Email</a>

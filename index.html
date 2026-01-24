@@ -113,6 +113,20 @@
             color: #bcc4ff;
         }
 
+        /* PROJECT IMAGES */
+        .project-img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 18px rgba(159,168,255,0.25);
+            transition: 0.4s ease;
+        }
+
+        .project-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(159,168,255,0.4);
+        }
+
         footer {
             text-align: center;
             padding: 25px;
@@ -137,6 +151,7 @@
             color: white;
             text-shadow: 0 0 10px #9fa8ff;
         }
+
     </style>
 </head>
 
@@ -148,6 +163,7 @@
         <div>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
@@ -164,12 +180,11 @@
     <section id="about" class="fade-in">
         <h2>About Me</h2>
         <p>
-            I’m a final-year Instrumentation & Control Engineering student passionate about embedded systems, 
-            autonomous sensing, and advanced control engineering. My interests span across aerospace systems, 
-            ocean technologies, and intelligent instrumentation.  
+            I’m a final-year Instrumentation & Control Engineering student passionate about 
+            embedded systems, autonomous sensing, and control engineering.  
             <br><br>
-            Currently a Project Intern at <b>Zeta Space Intelligence</b>, contributing to the Zero Emission mission 
-            through industrial IoT monitoring and environmental sensing.
+            Currently a Project Intern at <b>Zeta Space Intelligence</b>, contributing to the 
+            Zero Emission mission through environmental sensing and real-time industrial IoT.
         </p>
     </section>
 
@@ -177,28 +192,76 @@
     <section id="projects" class="fade-in">
         <h2>Projects</h2>
 
+        <!-- SMART POD -->
         <div class="card">
             <h3>Smart Pod for Infant Cabin Comfort (Aviation)</h3>
-            <p>Designed an intelligent cabin comfort system integrating temperature, humidity, pressure, and noise sensors 
-               with adaptive control logic for stable infant comfort during flight.</p>
+
+            <img src="project latest.jpg" class="project-img" alt="Smart Pod">
+
+            <p>Designed an intelligent cabin comfort system integrating temperature, humidity, 
+               pressure, and noise sensors with adaptive control logic to ensure infant comfort 
+               during flight.</p>
         </div>
 
+        <!-- GREENHOUSE -->
         <div class="card">
             <h3>Automated Greenhouse Climate & Weed Control System</h3>
-            <p>Built an IoT greenhouse for mung bean cultivation with dual-layer shading, Peltier temperature control, 
-               and moisture-based irrigation. <b>Winner of ₹25,000 at YIP 7.0.</b></p>
+
+            <img src="project 1.jpg" class="project-img">
+            <img src="project 2.jpg" class="project-img">
+
+            <p>Low-cost IoT greenhouse for mung bean cultivation with dual-layer shading, 
+               Peltier temperature control, moisture-based irrigation, and weed-suppression 
+               micro-environments.</p>
+
+            <p><b>Project Name:</b> Artificial Neural Network Based Automated Greenhouse Climate 
+            and Weed Control System</p>
+
+            <p><b>Achievement:</b> Won ₹25,000 under Agriculture & Plant Sciences at YIP 7.0</p>
         </div>
 
+        <!-- RAILMATE -->
         <div class="card">
             <h3>RailMate+ Passenger Assistance System</h3>
-            <p>Web-based assistant offering PNR tracking, coach navigation, seat layout visualization, and voice assistance.</p>
+
+            <img src="railmate.jpg" class="project-img">
+
+            <p>Web-based passenger assistant offering PNR tracking, seat layout visualization, 
+               coach navigation, and voice-based support.</p>
+        </div>
+
+        <!-- SOIL MOISTURE -->
+        <div class="card">
+            <h3>Soil Moisture Monitoring System</h3>
+            <p>Irrigation automation prototype using IC 741 comparator and soil moisture sensing.</p>
+        </div>
+
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="fade-in">
+        <h2>Achievements</h2>
+
+        <div class="card">
+            <h3>Young Innovators Programme 7.0 — District Winner</h3>
+            <img src="poster yip.jpg" class="project-img" alt="YIP Poster">
+
+            <p>Won <b>₹25,000</b> under the category 
+               <b>Agriculture and Plant Sciences</b> 
+               for the project:  
+               <br><br>
+               <b>“Artificial Neural Network Based Automated Greenhouse Climate and Weed Control System”</b>.
+            </p>
         </div>
 
         <div class="card">
-            <h3>Soil Moisture Monitoring System</h3>
-            <p>Irrigation automation prototype using IC 741 comparator and soil moisture sensor.</p>
+            <h3>Other Achievements</h3>
+            <ul>
+                <li>First Prize — Slide Wars (ISTE SB NSSCE)</li>
+                <li>First Prize — Rocket Rumble (ISTE SB NSSCE)</li>
+                <li>Certificate — EF SET English, NPTEL IoT, MathWorks Wireless Onramp</li>
+            </ul>
         </div>
-
     </section>
 
     <!-- EXPERIENCE -->
@@ -209,13 +272,14 @@
             <h3>Zetaspace Intelligence (Hybrid)</h3>
             <p><i>Jan 2026 – June 2026</i></p>
             <p>Developing IoT-based climate resilience systems including environmental sensor integration, 
-               real-time data pipelines, and reliability engineering.</p>
+               real-time data pipelines, and system reliability engineering.</p>
         </div>
 
         <div class="card">
             <h3>Hypstuma (Remote)</h3>
             <p><i>May 2025 – June 2025</i></p>
-            <p>Worked on UAV subsystems, drone CAD modelling, embedded electronics, and NACA 5-series airfoil analysis.</p>
+            <p>Worked on UAV subsystems, drone CAD modelling, embedded electronics, 
+               and NACA 5-series airfoil analysis.</p>
         </div>
     </section>
 
@@ -223,7 +287,7 @@
     <section id="skills" class="fade-in">
         <h2>Skills</h2>
         <p><b>Programming:</b> C, Python, MySQL</p>
-        <p><b>Embedded & IoT:</b> Arduino, sensor interfacing, environmental sensing</p>
+        <p><b>Embedded & IoT:</b> Arduino, Sensor Interfacing, Environmental Sensing</p>
         <p><b>Control & Simulation:</b> MATLAB, Simulink, GMAT</p>
         <p><b>Earth Observation:</b> Copernicus</p>
         <p><b>Design Tools:</b> SolidWorks</p>

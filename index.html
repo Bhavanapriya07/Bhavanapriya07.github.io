@@ -21,7 +21,7 @@
             color: #e4e4e8;
         }
 
-        /* SMOOTH FADE-IN ANIMATION */
+        /* FADE ANIMATION */
         .fade-in {
             opacity: 0;
             animation: fadeIn 1.2s forwards;
@@ -35,7 +35,7 @@
         nav {
             width: 100%;
             padding: 18px 40px;
-            background: rgba(20, 20, 35, 0.7);
+            background: rgba(20, 20, 35, 0.75);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -53,7 +53,6 @@
             font-weight: 600;
             transition: 0.3s;
         }
-
         nav a:hover { color: #ffffff; }
 
         /* HEADER */
@@ -63,19 +62,8 @@
             background: linear-gradient(135deg, #141432, #1f1f3d);
             color: white;
         }
-
-        header h1 {
-            font-size: 50px;
-            font-weight: 600;
-            animation: fadeIn 1.3s forwards;
-        }
-
-        header p {
-            font-size: 20px;
-            margin-top: 15px;
-            opacity: 0.8;
-            animation: fadeIn 1.8s forwards;
-        }
+        header h1 { font-size: 50px; font-weight: 600; }
+        header p { font-size: 20px; margin-top: 15px; opacity: 0.8; }
 
         /* SECTIONS */
         section {
@@ -83,7 +71,6 @@
             margin: 70px auto;
             padding: 0 25px;
         }
-
         section h2 {
             font-size: 28px;
             color: #9fa8ff;
@@ -97,34 +84,42 @@
             background: #1b1b2f;
             padding: 25px;
             border-radius: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 0 18px rgba(0,0,0,0.4);
+            margin-bottom: 35px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
             border: 1px solid rgba(255,255,255,0.08);
-            transition: all 0.4s ease;
+            transition: 0.4s;
         }
-
         .card:hover {
-            transform: translateY(-7px);
+            transform: translateY(-6px);
             box-shadow: 0 0 25px rgba(159,168,255,0.3);
         }
+        .card h3 { color: #bcc4ff; margin-bottom: 10px; }
 
-        .card h3 {
-            margin-bottom: 8px;
-            color: #bcc4ff;
+        /* IMAGE + TEXT SIDE BY SIDE */
+        .card-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        /* PROJECT IMAGES */
-        .project-img {
-            width: 100%;
+        .card-row img {
+            width: 35%;
             border-radius: 10px;
-            margin: 15px 0;
             box-shadow: 0 0 18px rgba(159,168,255,0.25);
-            transition: 0.4s ease;
+            transition: 0.4s;
+        }
+        .card-row img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(159,168,255,0.4);
         }
 
-        .project-img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 25px rgba(159,168,255,0.4);
+        .card-text { width: 65%; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .card-row { flex-direction: column; }
+            .card-row img { width: 90%; }
+            .card-text { width: 100%; }
         }
 
         footer {
@@ -133,182 +128,190 @@
             margin-top: 40px;
             background: #10101c;
             color: #8f98ff;
-            font-weight: 600;
             border-top: 1px solid rgba(255,255,255,0.06);
         }
 
-        /* CONTACT */
+        /* CONTACT LINKS */
         .contact a {
-            display: inline-block;
             margin-right: 15px;
             text-decoration: none;
             color: #9fa8ff;
             font-weight: 600;
-            transition: 0.3s;
         }
-
         .contact a:hover {
             color: white;
             text-shadow: 0 0 10px #9fa8ff;
         }
-
     </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="fade-in">
-        <div style="font-weight: 700; color:#bcc4ff; font-size:18px;">Bhavana Priya</div>
-        <div>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+<!-- NAVBAR -->
+<nav class="fade-in">
+    <div style="font-weight: 700; color:#bcc4ff; font-size:18px;">Bhavana Priya</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header>
+    <h1 class="fade-in">Bhavana Priya P K</h1>
+    <p class="fade-in">Instrumentation & Control Engineer • Embedded Systems • Space-Tech Enthusiast</p>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>
+        I’m a final-year Instrumentation & Control Engineering student specializing in embedded systems,
+        environmental sensing, and autonomous control.  
+        <br><br>
+        Currently a Project Intern at <b>Zeta Space Intelligence</b>, contributing to the Zero Emission mission
+        through industrial IoT and data-driven monitoring technologies.
+    </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
+    <h2>Projects</h2>
+
+    <!-- SMART POD -->
+    <div class="card">
+        <div class="card-row">
+            <img src="project latest.jpg" alt="Smart Pod">
+
+            <div class="card-text">
+                <h3>Smart Pod for Infant Cabin Comfort (Aviation)</h3>
+                <p>Designed an intelligent cabin comfort system integrating temperature, humidity, 
+                pressure, and noise sensors with adaptive control logic for stable infant comfort during flight.</p>
+            </div>
         </div>
-    </nav>
+    </div>
 
-    <!-- HEADER -->
-    <header>
-        <h1 class="fade-in">Bhavana Priya P K</h1>
-        <p class="fade-in">Instrumentation & Control Engineer • Embedded Systems • Space-Tech Enthusiast</p>
-    </header>
+    <!-- GREENHOUSE -->
+    <div class="card">
+        <div class="card-row">
 
-    <!-- ABOUT -->
-    <section id="about" class="fade-in">
-        <h2>About Me</h2>
-        <p>
-            I’m a final-year Instrumentation & Control Engineering student passionate about 
-            embedded systems, autonomous sensing, and control engineering.  
-            <br><br>
-            Currently a Project Intern at <b>Zeta Space Intelligence</b>, contributing to the 
-            Zero Emission mission through environmental sensing and real-time industrial IoT.
-        </p>
-    </section>
+            <div style="width:35%;">
+                <img src="project 1.jpg" style="width:100%; margin-bottom:10px;">
+                <img src="project 2.jpg" style="width:100%;">
+            </div>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="fade-in">
-        <h2>Projects</h2>
+            <div class="card-text">
+                <h3>Automated Greenhouse Climate & Weed Control System</h3>
 
-        <!-- SMART POD -->
-        <div class="card">
-            <h3>Smart Pod for Infant Cabin Comfort (Aviation)</h3>
+                <p>Low-cost IoT greenhouse for mung bean cultivation with dual-layer shading, 
+                Peltier control, moisture-based irrigation, and micro-environment weed suppression.</p>
 
-            <img src="project latest.jpg" class="project-img" alt="Smart Pod">
+                <p><b>Project Name:</b><br>
+                Artificial Neural Network Based Automated Greenhouse Climate and Weed Control System</p>
 
-            <p>Designed an intelligent cabin comfort system integrating temperature, humidity, 
-               pressure, and noise sensors with adaptive control logic to ensure infant comfort 
-               during flight.</p>
+                <p><b>Award:</b> ₹25,000 under Agriculture & Plant Sciences (YIP 7.0)</p>
+            </div>
         </div>
+    </div>
 
-        <!-- GREENHOUSE -->
-        <div class="card">
-            <h3>Automated Greenhouse Climate & Weed Control System</h3>
+    <!-- RAILMATE -->
+    <div class="card">
+        <div class="card-row">
+            <img src="railmate.jpg" alt="RailMate">
 
-            <img src="project 1.jpg" class="project-img">
-            <img src="project 2.jpg" class="project-img">
-
-            <p>Low-cost IoT greenhouse for mung bean cultivation with dual-layer shading, 
-               Peltier temperature control, moisture-based irrigation, and weed-suppression 
-               micro-environments.</p>
-
-            <p><b>Project Name:</b> Artificial Neural Network Based Automated Greenhouse Climate 
-            and Weed Control System</p>
-
-            <p><b>Achievement:</b> Won ₹25,000 under Agriculture & Plant Sciences at YIP 7.0</p>
+            <div class="card-text">
+                <h3>RailMate+ Passenger Assistance System</h3>
+                <p>Railway companion system offering PNR tracking, coach navigation, seat layout visualization,
+                and voice assistance.</p>
+            </div>
         </div>
+    </div>
 
-        <!-- RAILMATE -->
-        <div class="card">
-            <h3>RailMate+ Passenger Assistance System</h3>
+    <!-- SOIL -->
+    <div class="card">
+        <h3>Soil Moisture Monitoring System</h3>
+        <p>Irrigation automation device using IC 741 comparator and soil moisture sensing.</p>
+    </div>
 
-            <img src="railmate.jpg" class="project-img">
+</section>
 
-            <p>Web-based passenger assistant offering PNR tracking, seat layout visualization, 
-               coach navigation, and voice-based support.</p>
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="fade-in">
+    <h2>Achievements</h2>
+
+    <div class="card">
+        <div class="card-row">
+            <img src="poster yip.jpg" alt="YIP Poster">
+
+            <div class="card-text">
+                <h3>Young Innovators Programme 7.0 — District Winner</h3>
+                <p>Won <b>₹25,000</b> under <b>Agriculture & Plant Sciences</b>  
+                for the project:</p>
+
+                <p><b>“Artificial Neural Network Based Automated Greenhouse Climate and Weed Control System”</b></p>
+            </div>
         </div>
+    </div>
 
-        <!-- SOIL MOISTURE -->
-        <div class="card">
-            <h3>Soil Moisture Monitoring System</h3>
-            <p>Irrigation automation prototype using IC 741 comparator and soil moisture sensing.</p>
-        </div>
+    <div class="card">
+        <h3>Other Achievements</h3>
+        <ul>
+            <li>First Prize — Slide Wars (ISTE SB NSSCE)</li>
+            <li>First Prize — Rocket Rumble (ISTE SB NSSCE)</li>
+            <li>NPTEL IoT, MathWorks Onramp, EF SET English</li>
+        </ul>
+    </div>
+</section>
 
-    </section>
+<!-- EXPERIENCE -->
+<section id="experience" class="fade-in">
+    <h2>Experience</h2>
 
-    <!-- ACHIEVEMENTS -->
-    <section id="achievements" class="fade-in">
-        <h2>Achievements</h2>
+    <div class="card">
+        <h3>Zeta Space Intelligence (Hybrid)</h3>
+        <p><i>Jan 2026 – June 2026</i></p>
+        <p>Working on IoT-driven climate resilience systems, environmental sensing, and 
+        real-time data acquisition reliability.</p>
+    </div>
 
-        <div class="card">
-            <h3>Young Innovators Programme 7.0 — District Winner</h3>
-            <img src="poster yip.jpg" class="project-img" alt="YIP Poster">
+    <div class="card">
+        <h3>Hypstuma (Remote)</h3>
+        <p><i>May 2025 – June 2025</i></p>
+        <p>Performed UAV subsystem research, drone CAD modelling, embedded development,
+        and NACA airfoil analysis.</p>
+    </div>
+</section>
 
-            <p>Won <b>₹25,000</b> under the category 
-               <b>Agriculture and Plant Sciences</b> 
-               for the project:  
-               <br><br>
-               <b>“Artificial Neural Network Based Automated Greenhouse Climate and Weed Control System”</b>.
-            </p>
-        </div>
+<!-- SKILLS -->
+<section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <p><b>Programming:</b> C, Python, MySQL</p>
+    <p><b>Embedded & IoT:</b> Arduino, Sensor Interfacing, Environmental Sensing</p>
+    <p><b>Control & Simulation:</b> MATLAB, Simulink, GMAT</p>
+    <p><b>Earth Observation:</b> Copernicus</p>
+    <p><b>Design:</b> SolidWorks</p>
+    <p><b>Automation:</b> LabVIEW, RSLogix 500</p>
+    <p><b>Documentation:</b> LaTeX, MS Office, Notion</p>
+</section>
 
-        <div class="card">
-            <h3>Other Achievements</h3>
-            <ul>
-                <li>First Prize — Slide Wars (ISTE SB NSSCE)</li>
-                <li>First Prize — Rocket Rumble (ISTE SB NSSCE)</li>
-                <li>Certificate — EF SET English, NPTEL IoT, MathWorks Wireless Onramp</li>
-            </ul>
-        </div>
-    </section>
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <p class="contact">
+        <a href="mailto:bhavanapriyapk@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/bhavana-priya-p-k">LinkedIn</a>
+        <a href="https://github.com/Bhavanapriya07">GitHub</a>
+    </p>
+    <p>Kannadi, Palakkad, Kerala, India</p>
+</section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="fade-in">
-        <h2>Experience</h2>
-
-        <div class="card">
-            <h3>Zetaspace Intelligence (Hybrid)</h3>
-            <p><i>Jan 2026 – June 2026</i></p>
-            <p>Developing IoT-based climate resilience systems including environmental sensor integration, 
-               real-time data pipelines, and system reliability engineering.</p>
-        </div>
-
-        <div class="card">
-            <h3>Hypstuma (Remote)</h3>
-            <p><i>May 2025 – June 2025</i></p>
-            <p>Worked on UAV subsystems, drone CAD modelling, embedded electronics, 
-               and NACA 5-series airfoil analysis.</p>
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="fade-in">
-        <h2>Skills</h2>
-        <p><b>Programming:</b> C, Python, MySQL</p>
-        <p><b>Embedded & IoT:</b> Arduino, Sensor Interfacing, Environmental Sensing</p>
-        <p><b>Control & Simulation:</b> MATLAB, Simulink, GMAT</p>
-        <p><b>Earth Observation:</b> Copernicus</p>
-        <p><b>Design Tools:</b> SolidWorks</p>
-        <p><b>Automation:</b> LabVIEW, RSLogix 500</p>
-        <p><b>Documentation:</b> LaTeX, MS Office, Notion</p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p class="contact">
-            <a href="mailto:bhavanapriyapk@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/bhavana-priya-p-k">LinkedIn</a>
-            <a href="https://github.com/Bhavanapriya07">GitHub</a>
-        </p>
-        <p>Kannadi, Palakkad, Kerala, India</p>
-    </section>
-
-    <footer>
-        © 2026 Bhavana Priya
-    </footer>
+<footer>
+    © 2026 Bhavana Priya
+</footer>
 
 </body>
 </html>

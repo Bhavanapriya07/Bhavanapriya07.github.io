@@ -25,7 +25,7 @@ The website highlights:
 - `index.html` – Main portfolio page  
 - `style.css` – Styling and layout  
 - `assets/` – Images and project media  
-- `scripts/` – Optional JS components  
+  
 
 ## 📬 Contact
 If you'd like to collaborate, discuss projects, or know more about my work:
